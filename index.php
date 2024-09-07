@@ -1,9 +1,15 @@
+
 <?php 
+
 include 'inc/header.php';
+if (isset($_SESSION['loged']) == 1) {
 include 'handlers/APIS.php';
 $result = $opro->selectAll();
 if(empty($result)){
   header("Location: notfound.php");  
+}
+}else{
+  header("Location: login.php");  
 }
 ?>
 

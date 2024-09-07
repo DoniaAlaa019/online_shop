@@ -1,6 +1,11 @@
 <?php 
+
 require 'inc/header.php'; 
 include_once 'handlers/APIS.php';
+if (isset($_SESSION['loged']) == '') {
+
+    header("Location: login.php");  
+}
 $data = $opro->selectOne($request->get('id'));
 if(empty($data)){
     header("Location: notfound.php");  

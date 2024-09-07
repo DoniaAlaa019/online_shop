@@ -1,5 +1,11 @@
+
 <?php
+
 include 'inc/header.php'; 
+if (isset($_SESSION['loged']) == '') {
+
+    header("Location: login.php");  
+}
 include 'handlers/APIS.php';
 $result = $opro->selectOne($request->get('id'));
 if(empty($result)){

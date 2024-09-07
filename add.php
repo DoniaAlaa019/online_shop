@@ -1,4 +1,10 @@
-<?php include 'inc/header.php';
+<?php 
+
+include 'inc/header.php';
+if (isset($_SESSION['loged']) == '') {
+
+    header("Location: login.php");  
+}
 include 'handlers/APIS.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && 
     isset($_POST['submit'])) {
